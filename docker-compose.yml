@@ -22,8 +22,7 @@ services:
     restart: always
     depends_on:
       - mongo
-    environment:
-      - MONGO_URI=mongodb://admin:admin@mongo:27017/
-      - NODE_ENV=production
+    env_file:
+      - .env
     ports:
       - '3000:3000'
